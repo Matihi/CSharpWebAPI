@@ -42,7 +42,7 @@ public class PokemonService : IPokemonService
   public async Task<Pokemon?> GetByName(string name) {
     var pokemon = await _pokemonCollection.Find(p => p.Name == name).FirstOrDefaultAsync();
     if (pokemon == null) {
-      throw new Exception("Pokemon not found really?");
+      throw new Exception("Pokemon not found");
     }
     return pokemon;
   }
